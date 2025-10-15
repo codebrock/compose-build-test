@@ -1,0 +1,12 @@
+include:
+  - infra.yaml
+services:
+  mywebapp:
+    build: .
+    ports:
+      - "8000:5000"
+    develop:
+      watch:
+        - action: sync
+          path: ./appfiles 
+          target: /code
